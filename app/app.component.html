@@ -1,0 +1,518 @@
+<!-- ## LOGO ## -->
+<aside id="logo-bar">
+    <div id="logo"><a href="/tracks"><img src="assets/images/template/logo.png"
+                                          alt="LOGO"></a></div>
+    <div id="ajax-load"></div>
+</aside>
+
+<!-- ## PAGE GLOBAL ## -->
+<section id="page-global">
+
+    <!-- ## NAV HEADER ## -->
+    <header id="nav-header" class="clearfix">
+        <!-- ## PRIMARY NAV ## -->
+        <nav id="primary-nav">
+            <ul class="clearfix">
+                <li class="active">
+                    <a routerLink="/my-tracks">
+                        <i class="icon-music-1"></i>
+                        <p>My Tracks</p>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/friends" id="friends">
+                        <i class="icon-user-1"></i>
+                        <p>Friends</p>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/search" id="search">
+                        <i class="icon-calendar-2"></i>
+                        <p>Search</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    <!-- ## NAV HEADER END ## -->
+
+    <!-- ## PAGE WRAPPER ## -->
+    <div id="page-wrapper">
+
+        <!-- ## PAGE ## -->
+        <section id="page">
+
+            <!-- ## FIXY WRAPPER ## -->
+            <div id="fixy">
+                <!-- ## PAGE HEADER ## -->
+
+
+            </div>
+            <!-- ## FIXY WRAPPER END ## -->
+
+            <!-- ## PAGE CONTENT ## -->
+            <div class="container">
+                <router-outlet></router-outlet>
+                <section id="page-content" class="albumPadding">
+
+                    <!-- BLOG-META START -->
+                    <!-- BLOG-META END -->
+
+                    <!-- ## PLAYER ## -->
+
+                    <div id="jp_container_1" class="jp-audio">
+                        <div class="jp-type-playlist">
+                            <div id="jquery_jplayer_1" class="jp-jplayer" style="width: 0px; height: 0px;"><img
+                                    id="jp_poster_0" style="width: 0px; height: 0px; display: none;">
+                                <audio id="jp_audio_0" preload="metadata"
+                                       src="http://cs1-43v4.vk-cdn.net/p23/7e07d66b59cc9f.mp3?extra=p33YmuSkBcn4ssKu80RNyn_v5h6dnFkPFQNlF1GrNWE5O2uRzOePOIi1Wqt4NEjRxzE11Pup5tqZNsckvq5vJTtFAEeDPOS7UA24lBQ96DJwcxO8AMPEWwdo3HBjnGRT7jtQKWE-5PAl"></audio>
+                            </div>
+                            <div class="album-wrapper clearfix">
+                                <div class="album-controls">
+                                    <!-- ## TRACK INFO ## -->
+                                    <div class="track-info">
+                                        <h3 class="track-heading"><i class="icon-note-beamed"></i> <span id="th-title">Back to Black</span>
+                                        </h3>
+                                        <p class="track-by"><i class="icon-user-1"></i> <span id="th-artist">by Beyonce feat. Andre 3000 (OST The Great Gatsby)</span>
+                                        </p>
+                                    </div>
+                                    <!-- ## CONTROLS ## -->
+                                    <div class="jp-gui jp-interface">
+                                        <div class="jp-volume-controls">
+                                            <a href="javascript:;" class="jp-mute" role="button" tabindex="0"><i
+                                                    class="icon-volume-off"></i></a>
+                                            <div class="jp-volume-bar">
+                                                <div class="jp-volume-bar-value" style="width: 80%;"></div>
+                                            </div>
+                                            <a href="javascript:;" class="jp-volume-max" role="button" tabindex="0"><i
+                                                    class="icon-volume-off"></i></a>
+
+                                        </div>
+                                        <ul class="jp-controls clearfix">
+                                            <li><a href="javascript:;" class="jp-previous" tabindex="1"><i
+                                                    class="icon-backward"></i></a></li>
+                                            <li><a href="javascript:;" class="jp-play" tabindex="1"><i
+                                                    class="icon-play"></i></a></li>
+                                            <li><a href="javascript:;" class="jp-pause" tabindex="1"
+                                                   style="display: none;"><i class="icon-pause"></i></a></li>
+                                            <li><a href="javascript:;" class="jp-next" tabindex="1"><i
+                                                    class="icon-forward"></i></a></li>
+                                            <li><a href="javascript:;" class="jp-stop" tabindex="1"><i
+                                                    class="icon-stop"></i></a></li>
+                                        </ul>
+                                        <!-- ## PROGRESS BAR ## -->
+                                        <div class="jp-progress">
+                                            <div class="jp-seek-bar" style="width: 100%;">
+                                                <div class="jp-play-bar" style="width: 0%;"></div>
+                                            </div>
+                                            <div class="jp-current-time">00:00</div>
+                                            <div class="jp-duration">03:30</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ## PLAY LIST ## -->
+                            <div class="playlist-heading">Track List
+                                <!-- ## SHUFFLE/REPEAT ## -->
+                                <ul class="jp-toggles clearfix">
+                                    <li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle"><i
+                                            class="icon-shuffle-1"></i> Shuffle</a></li>
+                                    <li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off"
+                                           style="display: none;"><i class="icon-shuffle-1"></i>Shuffle Off</a></li>
+                                    <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat"><i
+                                            class="icon-loop"></i> Repeat</a></li>
+                                    <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off"
+                                           style="display: none;"><i class="icon-loop"></i> Repeat Off</a></li>
+                                </ul>
+                            </div>
+                            <!-- ## TRACK LIST ## -->
+                            <div class="jp-playlist" id="overflow-scroll">
+                                <ul class="scrollbar" id="style-15" style="display: block;">
+                                    <li class="jp-playlist-current">
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item jp-playlist-current"
+                                                tabindex="1"><span class="track-play"><i
+                                                class="icon-play"></i></span><span class="track-title"><span
+                                                class="jp-title">Back to Black</span> <span class="jp-artist">by Beyonce feat. Andre 3000 (OST The Great Gatsby)</span></span></a><a
+                                                id="delete_456239052" class="delete tips" href="#delete?id=456239052"
+                                                title="DELETE"><i class="icon-cancel"></i></a><a download=""
+                                                                                                 class="download tips"
+                                                                                                 href="http://cs1-43v4.vk-cdn.net/p23/7e07d66b59cc9f.mp3?extra=p33YmuSkBcn4ssKu80RNyn_v5h6dnFkPFQNlF1GrNWE5O2uRzOePOIi1Wqt4NEjRxzE11Pup5tqZNsckvq5vJTtFAEeDPOS7UA24lBQ96DJwcxO8AMPEWwdo3HBjnGRT7jtQKWE-5PAl"
+                                                                                                 title="DOWNLOAD"
+                                                                                                 target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">Together (OST The Great Gatsby)</span> <span
+                                                class="jp-artist">by The xx</span></span></a><a id="delete_456239051"
+                                                                                                class="delete tips"
+                                                                                                href="#delete?id=456239051"
+                                                                                                title="DELETE"><i
+                                                class="icon-cancel"></i></a><a download="" class="download tips"
+                                                                               href="http://cs1-36v4.vk-cdn.net/p8/4f12c41627b804.mp3?extra=e3r80NoC6_2YCh-b9CdkSEVsrA5QivgSyv60KtpDclImDzJzu8tI0WdOPJ-y7h5vRP6mej65_vn_dlDlYaoAyfcOPAXeSQDoMELVAyVf766ulvLvEJ5JXU4phVSGC2IUK_k-pmjuO9qO"
+                                                                               title="DOWNLOAD" target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">Funny Love (Slider &amp; Magnit Remix) </span> <span
+                                                class="jp-artist">by Dan Balan</span></span></a><a id="delete_456239050"
+                                                                                                   class="delete tips"
+                                                                                                   href="#delete?id=456239050"
+                                                                                                   title="DELETE"><i
+                                                class="icon-cancel"></i></a><a download="" class="download tips"
+                                                                               href="http://cs1-43v4.vk-cdn.net/p9/75b6d000204599.mp3?extra=_wkhysBDX3xIBJND0_hmASCQffpVdUvk_9TKg0CbwuwQh6J1iS7E9j2RWsOy1cRuD8cNL0V1F3qIipe_1giJ2YN7Vv5jC6ekYIcC1iocTf6VzuP9_nbzrp4O0_T0ZUvKQfpqP9C_WyR7"
+                                                                               title="DOWNLOAD" target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">M</span> <span
+                                                class="jp-artist">by Man</span></span></a><a id="delete_456239048"
+                                                                                             class="delete tips"
+                                                                                             href="#delete?id=456239048"
+                                                                                             title="DELETE"><i
+                                                class="icon-cancel"></i></a><a download="" class="download tips"
+                                                                               href="http://cs613717.vk.me/u212459621/audios/df2131ada1e7.mp3?extra=38KH1BUqjlI-PcAEeDJrV0BqWYk1SA-hKUykOZD_LF2xx5aoiRtQEESCA9B_89aayXrKJv3bVyQiQKKnfL27Iq8jRCVQaPrGz5BqmemdkkDozC_NXhYuzqh0piSDX1xODQ0eBbV1CFm2"
+                                                                               title="DOWNLOAD" target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">Bro</span> <span
+                                                class="jp-artist">by Gro</span></span></a><a id="delete_456239046"
+                                                                                             class="delete tips"
+                                                                                             href="#delete?id=456239046"
+                                                                                             title="DELETE"><i
+                                                class="icon-cancel"></i></a><a download="" class="download tips"
+                                                                               href="http://cs613218.vk.me/u30797321/audios/f9352f25d632.mp3?extra=i81Xi3xItAd_z3v-tgAhagixixeKv-AuJjezfz01XATcBkF3-ChXVqGiD0myLQoHE6BaWkFXpZe4sw_HAwNp7LdsTosl40gcrgqXFgRppucHqmy2IMmlkJUkp7qDieJ1XxeGdOeiTncN"
+                                                                               title="DOWNLOAD" target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span
+                                                class="jp-title">Кружит (Eugene Star Remix)</span> <span
+                                                class="jp-artist">by Monatik</span></span></a><a id="delete_456239045"
+                                                                                                 class="delete tips"
+                                                                                                 href="#delete?id=456239045"
+                                                                                                 title="DELETE"><i
+                                                class="icon-cancel"></i></a><a download="" class="download tips"
+                                                                               href="http://cs1-34v4.vk-cdn.net/p4/ab6cf288b2f4db.mp3?extra=gRXeh21OU3jUnER4IpK1hMRqJFLJemUvRUsP-2HCps_lgbOJz370hQGG0YJ0kcec1BWkdVPcJC0QaOI5ExB0JH82JXrgKjWWaurqhFDS0mnUf41YDpxH9fCSiDu9SwU75f5wlLUlf8Bc"
+                                                                               title="DOWNLOAD" target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">My Love (LOVRA Remix)</span> <span
+                                                class="jp-artist">by EA7</span></span></a><a id="delete_456239044"
+                                                                                             class="delete tips"
+                                                                                             href="#delete?id=456239044"
+                                                                                             title="DELETE"><i
+                                                class="icon-cancel"></i></a><a download="" class="download tips"
+                                                                               href="http://cs1-32v4.vk-cdn.net/p5/b64be0a4177c78.mp3?extra=RE5xnUlQwOcAT2trc0vk5GmGrr-kGfcWHEnWNHVdgpE5ZNOIpq5AcH3kEWhwcb2S3UTrkjm_tvpgtPL6oPcxgM1W6T71yKn7TKXzRIZrGTBbUiL3-78YupeBd68T2OagLDXG98xAWqzI"
+                                                                               title="DOWNLOAD" target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">Занавабич (Mona prod.)</span> <span
+                                                class="jp-artist">by MiyaGi</span></span></a><a id="delete_456239043"
+                                                                                                class="delete tips"
+                                                                                                href="#delete?id=456239043"
+                                                                                                title="DELETE"><i
+                                                class="icon-cancel"></i></a><a download="" class="download tips"
+                                                                               href="http://cs1-48v4.vk-cdn.net/p13/982bd3deaa83dd.mp3?extra=uXrI7ePA_jXklQOyj_DnB7Cq4sxfzNPo7mJ9Tqhe1rKIAztzV-BbrdMFLjcNqT-gGjCesLIA22Q3Hvd1KBUl4NGOHmDy_AVaDXPA0fKc6wViCyIMLn1V_argqri-oF7iPY2jO4NDY5pE"
+                                                                               title="DOWNLOAD" target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">Твои глаза,свели с ума</span> <span
+                                                class="jp-artist">by Гансело, (каспийский груз)</span></span></a><a
+                                                id="delete_456239042" class="delete tips" href="#delete?id=456239042"
+                                                title="DELETE"><i class="icon-cancel"></i></a><a download=""
+                                                                                                 class="download tips"
+                                                                                                 href="http://cs1-36v4.vk-cdn.net/p15/a71d69574fdba3.mp3?extra=yf7Z73T3ywOabilxezYfjzPazpTPSTY3s8iY3qygqZzN2jE9tNnaBawJakfBxg3qD3uKepRGujyEzMDmbcuI2S-Ln5Ww6C_Uq8DNz5bHuHIsYwIO9693jH55Xikx_9iL0hRVF4R8DFhI"
+                                                                                                 title="DOWNLOAD"
+                                                                                                 target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">Dream On</span> <span
+                                                class="jp-artist">by Aerosmit</span></span></a><a id="delete_456239041"
+                                                                                                  class="delete tips"
+                                                                                                  href="#delete?id=456239041"
+                                                                                                  title="DELETE"><i
+                                                class="icon-cancel"></i></a><a download="" class="download tips"
+                                                                               href="http://cs1-24v4.vk-cdn.net/p30/d1c19d31fdedc6.mp3?extra=8vYjWN-_iGsr6GpwzktHubLuJEbZzTcppL6GQT_zETjJ4xdI4LTp8hTx75dIRF6AZhaerdFfns2-a91m28gAuijXnYorFeIycCT47xbU0EXhA0I85hKRg1SPnF1mB8lBHYearpmAGGsX"
+                                                                               title="DOWNLOAD" target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span
+                                                class="jp-title">Буря морей (2016)</span> <span class="jp-artist">by Уверенно..†</span></span></a><a
+                                                id="delete_456239040" class="delete tips" href="#delete?id=456239040"
+                                                title="DELETE"><i class="icon-cancel"></i></a><a download=""
+                                                                                                 class="download tips"
+                                                                                                 href="http://cs1-41v4.vk-cdn.net/p24/5f06a53fbf580b.mp3?extra=Gn2FxBDaEnBPGLdyLM-rLJ3GodxMR_szqAeaYGx1KTc17ZLHxwXKp4gxWz8o14t88e4psGn58HhJYR-SOSySE1mlxYmgI2x2ABpqlB9NbKykURLfG3-FUFk36lCUXoy977Ml8hu6o1P7"
+                                                                                                 title="DOWNLOAD"
+                                                                                                 target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span
+                                                class="jp-title">Тону в тебе , как в омуте</span> <span
+                                                class="jp-artist">by Kamazz</span></span></a><a id="delete_456239039"
+                                                                                                class="delete tips"
+                                                                                                href="#delete?id=456239039"
+                                                                                                title="DELETE"><i
+                                                class="icon-cancel"></i></a><a download="" class="download tips"
+                                                                               href="http://cs1-50v4.vk-cdn.net/p21/6026f926ed3c18.mp3?extra=Umat4CZWd_IJ_wQbzg7sox28JwqTIaV7GQjDjgjh8T38Kgu7Csayb8U2t-7gPKsG-fEC6xdKgns9JeW8w3KBLqcwyIi8_92EzCsEUyhrzubO9f8fd9wFjyc4m76wVNe4PkpjswGVR2m1"
+                                                                               title="DOWNLOAD" target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">Люби пацана 2016</span> <span
+                                                class="jp-artist">by ЭGO</span></span></a><a id="delete_456239037"
+                                                                                             class="delete tips"
+                                                                                             href="#delete?id=456239037"
+                                                                                             title="DELETE"><i
+                                                class="icon-cancel"></i></a><a download="" class="download tips"
+                                                                               href="http://cs611223.vk.me/u17797190/audios/df2e4e931232.mp3?extra=qbqLXpG6llvPIH4zPMRsua7Fnx4yfNahE-3qO1qaXIzwMQCDhkspgekDGbUmPFYDmLQW79zKmADvdXlyGUl1i6JQ5sdB4YQ03681g4YmSKL8DmFLVgm3Tct4bq92m-uj_AtYv9PKSyfw"
+                                                                               title="DOWNLOAD" target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">Давай уедем ft. Mania</span> <span
+                                                class="jp-artist">by Каспийский Груз</span></span></a><a
+                                                id="delete_456239036" class="delete tips" href="#delete?id=456239036"
+                                                title="DELETE"><i class="icon-cancel"></i></a><a download=""
+                                                                                                 class="download tips"
+                                                                                                 href="http://cs1-44v4.vk-cdn.net/p20/515ac414f6e8e2.mp3?extra=-Z1yHcSRNk7TnS4HuzoLhtrLBDfqtNIlaL5oFxjX_DF6CBfZton1AImu6zcO6j9Ep9gBaDY5q33OPhEKi9wEW7E1uiON9QvzskOSDVtkOGvDvahPxDbn8sSw7xIx2BLuOxArEoNBJf6A"
+                                                                                                 title="DOWNLOAD"
+                                                                                                 target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span
+                                                class="jp-title">милая моя, этот дым над рекой</span> <span
+                                                class="jp-artist">by Каспийский груз</span></span></a><a
+                                                id="delete_456239035" class="delete tips" href="#delete?id=456239035"
+                                                title="DELETE"><i class="icon-cancel"></i></a><a download=""
+                                                                                                 class="download tips"
+                                                                                                 href="http://cs1-50v4.vk-cdn.net/p17/b29dd2ff87b799.mp3?extra=hfcJy2Yr3z6TJKlXnQP3wfUb4bYfAUMtcItPWYuhew0iC5v2n2HQFWYtpGAmUk9xN9gFciNwqt1ltwbue79ZGO3L3nJhKQZmzHUaV3SSOPIcW3YFFJWpC4tbBhsNueH9DfrUVLTIVKMf"
+                                                                                                 title="DOWNLOAD"
+                                                                                                 target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">When I Look At You (Ookay Trap Refix) (vk.com/bassboosted)</span> <span
+                                                class="jp-artist">by Emalkay</span></span></a><a id="delete_456239032"
+                                                                                                 class="delete tips"
+                                                                                                 href="#delete?id=456239032"
+                                                                                                 title="DELETE"><i
+                                                class="icon-cancel"></i></a><a download="" class="download tips"
+                                                                               href="http://cs6170.vk.me/u30580266/audios/932bf93b1eca.mp3?extra=c0EVHwIqKdnEvZndvhokt_n3CFmezQpaRAaMQe5bGdx1uSeB0sqO_uG-UfuBZzhAtGAynIML9Tb4pH5tfLVzNlA58TneUXPOiZosQCGEaxLHbWToXlo3KZSroEmU8LRS-YqGiaXP_3Xu"
+                                                                               title="DOWNLOAD" target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">Bad Karma </span> <span
+                                                class="jp-artist">by Axel Thesleff</span></span></a><a
+                                                id="delete_391836803" class="delete tips" href="#delete?id=391836803"
+                                                title="DELETE"><i class="icon-cancel"></i></a><a download=""
+                                                                                                 class="download tips"
+                                                                                                 href="http://cs1-45v4.vk-cdn.net/p17/91d48c708592e9.mp3?extra=H0pVv0Ql8dcNPJB_eXLWKxmgn5aUziGviKuYM0DYak-DyKo0Szi0hMmeQMneRKO5iXQGbVjuyZ0E9SGTnVhhgp4PaqxpXGFEXOj_u1lwX4sjBVOpfjWhnYtFgm89JBmgIFSgJw-PA_lc"
+                                                                                                 title="DOWNLOAD"
+                                                                                                 target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">18+ [2015]</span> <span
+                                                class="jp-artist">by Каспийский груз ft. Slim (CENTR), Rigos</span></span></a><a
+                                                id="delete_390328781" class="delete tips" href="#delete?id=390328781"
+                                                title="DELETE"><i class="icon-cancel"></i></a><a download=""
+                                                                                                 class="download tips"
+                                                                                                 href="http://cs611327.vk.me/u11415641/audios/03d20e56a08e.mp3?extra=KfsM6e_Wm6oGkHdpqQuds-Lzm_whhIVZmc1fR5wzYQVVThY8VucMm2Luv008gtTJQGum5G5WcEi2Yk7TWRIRRTxCFVqlcwbK_k2hskXWKY9Wpm0wugCdF_3sFXq8Yt1hHerV07Xqs-09"
+                                                                                                 title="DOWNLOAD"
+                                                                                                 target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">Такое чувство</span> <span
+                                                class="jp-artist">by Каста</span></span></a><a id="delete_375625664"
+                                                                                               class="delete tips"
+                                                                                               href="#delete?id=375625664"
+                                                                                               title="DELETE"><i
+                                                class="icon-cancel"></i></a><a download="" class="download tips"
+                                                                               href="http://cs1-50v4.vk-cdn.net/p8/a959e25b0fcde8.mp3?extra=2VHW_pz8Ls1TOb0A9oOlxafku1fPifDxaBUjchg5kVkfX3UqRFWeIUWpS6HXaBfrCe6iDpdmFOptKDY4W1QAwbal4x-KQ3niv-K3KEBFnP8JubzX2zSglcYoJiGEFpw7UDg8wTJ3aL-_"
+                                                                               title="DOWNLOAD" target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">Прощание</span> <span
+                                                class="jp-artist">by Влади (Каста)</span></span></a><a
+                                                id="delete_375625641" class="delete tips" href="#delete?id=375625641"
+                                                title="DELETE"><i class="icon-cancel"></i></a><a download=""
+                                                                                                 class="download tips"
+                                                                                                 href="http://cs1-51v4.vk-cdn.net/p16/a29c6f9859f1ea.mp3?extra=kdhHMRqGjbe_a5blF5jDZ7fMSX2xcWC1C6RlZOjM6EaTZ-B2cablRSKbSeHxlBD3xrMR_Pfoh3juSGDR91hp79ZQaSDIoTTOb-ZADdBRSjoTS5L5mpgNatgS_ukP6SPO2wpgEJnzhD7C"
+                                                                                                 title="DOWNLOAD"
+                                                                                                 target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">Сам Все Знаю ft. Гансэлло [Новый Рэп]</span> <span
+                                                class="jp-artist">by Каспийский Груз</span></span></a><a
+                                                id="delete_401097628" class="delete tips" href="#delete?id=401097628"
+                                                title="DELETE"><i class="icon-cancel"></i></a><a download=""
+                                                                                                 class="download tips"
+                                                                                                 href="http://cs1-43v4.vk-cdn.net/p2/29418666f1e1e3.mp3?extra=7bDoO1MYrsUFaU8vbgC0hQHKzpOWTIRlFx1-ME31Fw9lXfLMDlS-q9HtG64GFRicQJPjjnoQnbOv2b0AOp1fqODlxCB-eNDkDn7j6iyapaAwqVyHO46wlgG0206XbJhjlyhZrHHbvm87"
+                                                                                                 title="DOWNLOAD"
+                                                                                                 target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span
+                                                class="jp-title">Too Close (To Love You)</span> <span class="jp-artist">by Alex Clare</span></span></a><a
+                                                id="delete_370519585" class="delete tips" href="#delete?id=370519585"
+                                                title="DELETE"><i class="icon-cancel"></i></a><a download=""
+                                                                                                 class="download tips"
+                                                                                                 href="http://cs1-16v4.vk-cdn.net/p8/652c674a488078.mp3?extra=zBImrNLvdvy8Lv79yLv5ZNxdfYkEOhFjNVfiEes_1SDOMtkcEFBqKusc0IBvwMFAVg9kXxWbyIw0DTRHudYRWBzhFMbWrwhUbnoiGnGnmORxcPr0BIifZCibbc5z9h-IXIN2qYYmD_er"
+                                                                                                 title="DOWNLOAD"
+                                                                                                 target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">Beautiful World (Hardwell Exclusive)</span> <span
+                                                class="jp-artist">by Blasterjaxx &amp; DBSTF</span></span></a><a
+                                                id="delete_367699024" class="delete tips" href="#delete?id=367699024"
+                                                title="DELETE"><i class="icon-cancel"></i></a><a download=""
+                                                                                                 class="download tips"
+                                                                                                 href="http://cs1-42v4.vk-cdn.net/p13/24a11fbac7a34f.mp3?extra=nqOmJUYLpUMvQOI_5__vPkU0N05-AbP3zDc8v8jQexoGrQeJjUiiNWQflr5WAXypjAKWpL6TOElZ9dcqCLf-X4qYDboyjmcrawBjKKP0iVyoobKU2oYr0hpBh3puiIH6_ZIFh-otzed_"
+                                                                                                 title="DOWNLOAD"
+                                                                                                 target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="javascript:;" class="jp-playlist-item-remove">×</a><a
+                                                href="javascript:;" class="jp-playlist-item" tabindex="1"><span
+                                                class="track-play"><i class="icon-play"></i></span><span
+                                                class="track-title"><span class="jp-title">I Still Love You (Mahmut Orhan Remix) [Preview]</span> <span
+                                                class="jp-artist">by Ludwix feat. Katya Slok</span></span></a><a
+                                                id="delete_367699019" class="delete tips" href="#delete?id=367699019"
+                                                title="DELETE"><i class="icon-cancel"></i></a><a download=""
+                                                                                                 class="download tips"
+                                                                                                 href="http://cs422320.vk.me/u163758606/audios/5dc8831f0db7.mp3?extra=EdwVWRw0o6SzdUzfq0YjaES02BW04DxVdQb3_LZwF3y1SPYRAzO91smqY4qoUAWpOcv4u4ynTR44L9E5ZhOVmNLpaT7BNJR5UfQEj9pStBXkieAKZBr65osPqog0G9pqvCFkb9U9Pg1u"
+                                                                                                 title="DOWNLOAD"
+                                                                                                 target="_blank"><i
+                                                class="icon-download"></i></a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ## PLAYER FALLBACK ## -->
+                            <div class="jp-no-solution" style="display: none;">
+                                <span>Update Required</span>
+                                To play the media you will need to either update your browser to a recent version or
+                                update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ## PLAYER END ## -->
+
+                    <!-- POST CONTENT -->
+                    <div class="postContent transparent">
+                    </div>
+                    <!-- POST CONTENT END -->
+
+                </section>
+                <!--<section id="page-content" class="albumPadding">-->
+
+                <!--&lt;!&ndash; BLOG-META START &ndash;&gt;-->
+                <!--&lt;!&ndash; BLOG-META END &ndash;&gt;-->
+
+
+                <!--&lt;!&ndash; POST CONTENT &ndash;&gt;-->
+                <!--<div class="postContent transparent">-->
+                <!--</div>-->
+                <!--&lt;!&ndash; POST CONTENT END &ndash;&gt;-->
+
+                <!--</section>-->
+            </div>
+            <!-- ## PAGE CONTENT END ## -->
+
+        </section>
+        <!-- ## PAGE END ## -->
+
+    </div>
+    <!-- ## PAGE WRAPPER END ## -->
+
+    <!-- ## FOOTER ## -->
+    <footer id="PriFooter">
+        <div class="container clearfix">
+        </div>
+    </footer>
+    <!-- ## FOOTER END ## -->
+</section>
+<!-- ## PAGE GLOBAL END ## -->
