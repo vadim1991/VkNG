@@ -9,18 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var FriendsComponent = (function () {
-    function FriendsComponent() {
+var MyTracksComponent = (function () {
+    function MyTracksComponent() {
     }
-    FriendsComponent = __decorate([
+    MyTracksComponent = __decorate([
         core_1.Component({
-            selector: "friends",
-            templateUrl: "app/friends.component.html",
-            styleUrls: ["assets/css/player.css"]
+            selector: "my-tracks",
+            templateUrl: "app/component/my-tracks.component.html"
         }), 
         __metadata('design:paramtypes', [])
-    ], FriendsComponent);
-    return FriendsComponent;
+    ], MyTracksComponent);
+    return MyTracksComponent;
 }());
-exports.FriendsComponent = FriendsComponent;
-//# sourceMappingURL=friends.component.js.map
+exports.MyTracksComponent = MyTracksComponent;
+//# sourceMappingURL=my-tracks.component.js.map

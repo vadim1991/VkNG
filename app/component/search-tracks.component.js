@@ -15,7 +15,7 @@ var SearchTracksComponent = (function () {
     SearchTracksComponent = __decorate([
         core_1.Component({
             selector: "search-tracks",
-            templateUrl: "app/search-tracks.component.html"
+            templateUrl: "app/component/search-tracks.component.html"
         }), 
         __metadata('design:paramtypes', [])
     ], SearchTracksComponent);

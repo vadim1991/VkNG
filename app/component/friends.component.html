@@ -1,0 +1,11 @@
+<header id="friends-header" class="custom-header">
+    <h1>Friends. <span id="chosen-friend">Choose friend</span></h1>
+</header>
+<section class="jp-playlist" id="friend-list">
+    <ul class="friend-list friends" id="style-15">
+        <li *ngFor="let friend of friends"><a class="friend" href="#friend&amp;id={{friend.uid}}" data-id={{friend.uid}}><img
+                class="friend-img"
+                src={{friend.photoUrl}}><span
+                class="track-title">{{friend.firstName}}&nbsp;{{friend.lastName}}</span></a></li>
+    </ul>
+</section>

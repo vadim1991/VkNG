@@ -9,17 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var MyTracksComponent = (function () {
-    function MyTracksComponent() {
+var user_service_1 = require("../service/user.service");
+var FriendsComponent = (function () {
+    function FriendsComponent(userService) {
+        this.userService = userService;
+        this.friends = [];
     }
-    MyTracksComponent = __decorate([
+    FriendsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userService.getFriends(20, 0).then(function (users) { return _this.friends = users; });
+    };
+    FriendsComponent = __decorate([
         core_1.Component({
-            selector: "my-tracks",
-            templateUrl: "app/my-tracks.component.html"
+            selector: "friends",
+            templateUrl: "app/component/friends.component.html",
+            styleUrls: ["assets/css/player.css"],
+            providers: [user_service_1.UserService]
         }), 
-        __metadata('design:paramtypes', [])
-    ], MyTracksComponent);
-    return MyTracksComponent;
+        __metadata('design:paramtypes', [user_service_1.UserService])
+    ], FriendsComponent);
+    return FriendsComponent;
 }());
-exports.MyTracksComponent = MyTracksComponent;
-//# sourceMappingURL=my-tracks.component.js.map
+exports.FriendsComponent = FriendsComponent;
+//# sourceMappingURL=friends.component.js.map

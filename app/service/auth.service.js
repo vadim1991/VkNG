@@ -9,12 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var core_2 = require('angular2-cookie/core');
 var AuthService = (function () {
-    function AuthService() {
+    function AuthService(cookieService) {
+        this.cookieService = cookieService;
     }
+    AuthService.prototype.getUserId = function () {
+        return this.getCookie("user_id");
+    };
+    AuthService.prototype.getAccessToken = function () {
+        return this.getCookie("access_token");
+    };
+    AuthService.prototype.getCookie = function (key) {
+        return this.cookieService.get(key);
+    };
     AuthService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [core_2.CookieService])
     ], AuthService);
     return AuthService;
 }());

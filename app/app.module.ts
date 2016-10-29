@@ -3,19 +3,22 @@ import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule}   from '@angular/forms';
 import {AppComponent}  from './app.component';
-import {SearchTracksComponent} from './search-tracks.component';
-import {FriendsComponent} from './friends.component';
-import {MyTracksComponent} from './my-tracks.component';
-import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {SearchTracksComponent} from './component/search-tracks.component';
+import {FriendsComponent} from './component/friends.component';
+import {MyTracksComponent} from './component/my-tracks.component';
 import {RouterModule} from "@angular/router";
 import {TrackService} from './service/track.service';
 import {AuthService} from './service/auth.service';
-import { CookieService } from 'angular2-cookie/services/cookies.service';
+import {UserService} from './service/user.service';
+import {CookieService} from 'angular2-cookie/services/cookies.service';
+import {HttpModule, JsonpModule} from '@angular/http';
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
+        HttpModule,
+        JsonpModule,
         RouterModule.forRoot([
             {
                 path: '',
@@ -44,6 +47,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
     providers: [
         TrackService,
         AuthService,
+        UserService,
         CookieService
     ],
     bootstrap: [AppComponent]
