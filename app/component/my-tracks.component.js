@@ -9,15 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var track_service_1 = require("../service/track.service");
+var player_service_1 = require("../service/player.service");
 var MyTracksComponent = (function () {
-    function MyTracksComponent() {
+    function MyTracksComponent(trackService, playerService) {
+        this.trackService = trackService;
+        this.playerService = playerService;
     }
+    MyTracksComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.trackService.getOwnTracks(10, 0).then(function (tracks) {
+            console.log(tracks);
+            _this.playerService.fillPlayer(tracks);
+        });
+    };
     MyTracksComponent = __decorate([
         core_1.Component({
             selector: "my-tracks",
-            templateUrl: "app/component/my-tracks.component.html"
+            templateUrl: "app/component/my-tracks.component.html",
+            providers: [track_service_1.TrackService, player_service_1.PlayerService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [track_service_1.TrackService, player_service_1.PlayerService])
     ], MyTracksComponent);
     return MyTracksComponent;
 }());

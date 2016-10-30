@@ -2,7 +2,11 @@
     <h1>Friends. <span id="chosen-friend">Choose friend</span></h1>
 </header>
 <section class="jp-playlist" id="friend-list">
-    <ul class="friend-list friends" id="style-15">
+    <ul class="friend-list friends" id="style-15" infinite-scroll
+        [infiniteScrollDistance]="1"
+        [infiniteScrollThrottle]="20"
+        [scrollWindow]="false"
+        (scrolled)="onScrollDown()">
         <li *ngFor="let friend of friends"><a class="friend" href="#friend&amp;id={{friend.uid}}" data-id={{friend.uid}}><img
                 class="friend-img"
                 src={{friend.photoUrl}}><span

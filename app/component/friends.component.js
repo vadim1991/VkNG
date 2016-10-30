@@ -14,10 +14,47 @@ var FriendsComponent = (function () {
     function FriendsComponent(userService) {
         this.userService = userService;
         this.friends = [];
+        this.count = 30;
+        this.offset = 0;
+        this.isOver = false;
     }
     FriendsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.userService.getFriends(20, 0).then(function (users) { return _this.friends = users; });
+        this.userService.getFriends(this.count, this.offset).then(function (users) { return _this.friends = users; });
+        this.offset += this.count;
+    };
+    FriendsComponent.prototype.onScrollDown = function () {
+        var _this = this;
+        if (!this.isOver) {
+            this.userService.getFriends(this.count, this.offset).then(function (users) {
+                _this.addAll(users);
+                if (users.length > 0 && users.length >= _this.count) {
+                    _this.offset += _this.count;
+                }
+                else {
+                    _this.isOver = true;
+                }
+            });
+        }
+        console.log("scrolling");
+        var play = new jPlayerPlaylist({
+            jPlayer: "#jquery_jplayer_1",
+            cssSelectorAncestor: "#jp_container_1"
+        }, [], {
+            playlistOptions: {
+                enableRemoveControls: true
+            },
+            swfPath: "./assets/js/jplayer/",
+            supplied: "mp3",
+            smoothPlayBar: true,
+            audioFullScreen: true
+        });
+        console.log(play);
+    };
+    FriendsComponent.prototype.addAll = function (newFriends) {
+        for (var i = 0; i < newFriends.length; i++) {
+            this.friends.push(newFriends[i]);
+        }
     };
     FriendsComponent = __decorate([
         core_1.Component({

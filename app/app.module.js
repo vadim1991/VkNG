@@ -20,8 +20,10 @@ var router_1 = require("@angular/router");
 var track_service_1 = require('./service/track.service');
 var auth_service_1 = require('./service/auth.service');
 var user_service_1 = require('./service/user.service');
+var player_service_1 = require('./service/player.service');
 var cookies_service_1 = require('angular2-cookie/services/cookies.service');
 var http_1 = require('@angular/http');
+var angular2_infinite_scroll_1 = require('angular2-infinite-scroll');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -32,6 +34,7 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 http_1.JsonpModule,
+                angular2_infinite_scroll_1.InfiniteScrollModule,
                 router_1.RouterModule.forRoot([
                     {
                         path: '',
@@ -61,6 +64,7 @@ var AppModule = (function () {
                 track_service_1.TrackService,
                 auth_service_1.AuthService,
                 user_service_1.UserService,
+                player_service_1.PlayerService,
                 cookies_service_1.CookieService
             ],
             bootstrap: [app_component_1.AppComponent]

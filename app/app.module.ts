@@ -10,8 +10,10 @@ import {RouterModule} from "@angular/router";
 import {TrackService} from './service/track.service';
 import {AuthService} from './service/auth.service';
 import {UserService} from './service/user.service';
+import {PlayerService} from './service/player.service';
 import {CookieService} from 'angular2-cookie/services/cookies.service';
 import {HttpModule, JsonpModule} from '@angular/http';
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 
 @NgModule({
     imports: [
@@ -19,6 +21,7 @@ import {HttpModule, JsonpModule} from '@angular/http';
         FormsModule,
         HttpModule,
         JsonpModule,
+        InfiniteScrollModule,
         RouterModule.forRoot([
             {
                 path: '',
@@ -48,6 +51,7 @@ import {HttpModule, JsonpModule} from '@angular/http';
         TrackService,
         AuthService,
         UserService,
+        PlayerService,
         CookieService
     ],
     bootstrap: [AppComponent]
