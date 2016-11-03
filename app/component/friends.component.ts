@@ -1,14 +1,14 @@
 import {Component, OnInit} from "@angular/core"
 import {UserService} from "../service/user.service";
 import {User} from "../model/user";
-declare var jPlayerPlaylist: any;
+import {TrackService} from "../service/track.service";
+import {PlayerService} from "../service/player.service";
 
 
 @Component({
     selector: "friends",
     templateUrl: "app/component/friends.component.html",
-    styleUrls: ["assets/css/player.css"],
-    providers: [UserService]
+    styleUrls: ["assets/css/player.css"]
 })
 export class FriendsComponent implements OnInit {
 
@@ -16,8 +16,9 @@ export class FriendsComponent implements OnInit {
     count:number = 30;
     offset:number = 0;
     isOver:boolean = false;
+    selectedFriend: User;
 
-    constructor(private userService:UserService) {
+    constructor(private userService:UserService, private trackService: TrackService, private playerService: PlayerService) {
 
     }
 
@@ -37,20 +38,11 @@ export class FriendsComponent implements OnInit {
                 }
             });
         }
-        console.log("scrolling");
-        let play = new jPlayerPlaylist({
-            jPlayer: "#jquery_jplayer_1",
-            cssSelectorAncestor: "#jp_container_1"
-        }, [], {
-            playlistOptions: {
-                enableRemoveControls: true
-            },
-            swfPath: "./assets/js/jplayer/",
-            supplied: "mp3",
-            smoothPlayBar: true,
-            audioFullScreen: true
-        });
-        console.log(play);
+    }
+
+    public onSelect(friend: User): void {
+        this.selectedFriend = friend;
+        this.trackService.getFriendTracks(30, 0, friend.userId).then(tracks => this.playerService.fillPlayer(tracks));
     }
 
     private addAll(newFriends:Array<User>):void {

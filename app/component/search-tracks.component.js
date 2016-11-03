@@ -9,15 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var track_service_1 = require("../service/track.service");
+var player_service_1 = require("../service/player.service");
 var SearchTracksComponent = (function () {
-    function SearchTracksComponent() {
+    function SearchTracksComponent(trackService, playerService) {
+        this.trackService = trackService;
+        this.playerService = playerService;
     }
+    SearchTracksComponent.prototype.searchTracks = function (searchText) {
+        var _this = this;
+        this.trackService.searchTracks(30, 0, searchText).then(function (tracks) { return _this.playerService.fillPlayer(tracks); });
+    };
     SearchTracksComponent = __decorate([
         core_1.Component({
             selector: "search-tracks",
             templateUrl: "app/component/search-tracks.component.html"
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [track_service_1.TrackService, player_service_1.PlayerService])
     ], SearchTracksComponent);
     return SearchTracksComponent;
 }());

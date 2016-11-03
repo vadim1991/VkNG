@@ -3,7 +3,7 @@
 </header>
 <section class="webdesigntuts-workshop">
     <div class="form">
-        <input type="search" id="search-text" placeholder="Search...">
-        <button id="search-submit">Search</button>
+        <input #search (keyup.enter)="searchTracks(search.value)" type="search" id="search-text" placeholder="Search...">
+        <!--<button id="search-submit">Search</button>-->
     </div>
 </section>

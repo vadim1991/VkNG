@@ -15,10 +15,15 @@ var MyTracksComponent = (function () {
     function MyTracksComponent(trackService, playerService) {
         this.trackService = trackService;
         this.playerService = playerService;
+        this.tracks = [];
+        this.count = 30;
+        this.offset = 0;
+        this.isOver = false;
+        console.log("constr track service");
     }
     MyTracksComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.trackService.getOwnTracks(10, 0).then(function (tracks) {
+        this.trackService.getOwnTracks(30, 0).then(function (tracks) {
             console.log(tracks);
             _this.playerService.fillPlayer(tracks);
         });
@@ -26,8 +31,7 @@ var MyTracksComponent = (function () {
     MyTracksComponent = __decorate([
         core_1.Component({
             selector: "my-tracks",
-            templateUrl: "app/component/my-tracks.component.html",
-            providers: [track_service_1.TrackService, player_service_1.PlayerService]
+            templateUrl: "app/component/my-tracks.component.html"
         }), 
         __metadata('design:paramtypes', [track_service_1.TrackService, player_service_1.PlayerService])
     ], MyTracksComponent);

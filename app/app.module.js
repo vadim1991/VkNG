@@ -41,6 +41,10 @@ var AppModule = (function () {
                         component: my_tracks_component_1.MyTracksComponent
                     },
                     {
+                        path: 'tracks',
+                        component: my_tracks_component_1.MyTracksComponent
+                    },
+                    {
                         path: 'search',
                         component: search_tracks_component_1.SearchTracksComponent
                     },

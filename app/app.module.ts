@@ -28,6 +28,10 @@ import { InfiniteScrollModule } from 'angular2-infinite-scroll';
                 component: MyTracksComponent
             },
             {
+                path: 'tracks',
+                component: MyTracksComponent
+            },
+            {
                 path: 'search',
                 component: SearchTracksComponent
             },

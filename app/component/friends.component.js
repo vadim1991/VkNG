@@ -10,9 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var user_service_1 = require("../service/user.service");
+var track_service_1 = require("../service/track.service");
+var player_service_1 = require("../service/player.service");
 var FriendsComponent = (function () {
-    function FriendsComponent(userService) {
+    function FriendsComponent(userService, trackService, playerService) {
         this.userService = userService;
+        this.trackService = trackService;
+        this.playerService = playerService;
         this.friends = [];
         this.count = 30;
         this.offset = 0;
@@ -36,20 +40,11 @@ var FriendsComponent = (function () {
                 }
             });
         }
-        console.log("scrolling");
-        var play = new jPlayerPlaylist({
-            jPlayer: "#jquery_jplayer_1",
-            cssSelectorAncestor: "#jp_container_1"
-        }, [], {
-            playlistOptions: {
-                enableRemoveControls: true
-            },
-            swfPath: "./assets/js/jplayer/",
-            supplied: "mp3",
-            smoothPlayBar: true,
-            audioFullScreen: true
-        });
-        console.log(play);
+    };
+    FriendsComponent.prototype.onSelect = function (friend) {
+        var _this = this;
+        this.selectedFriend = friend;
+        this.trackService.getFriendTracks(30, 0, friend.userId).then(function (tracks) { return _this.playerService.fillPlayer(tracks); });
     };
     FriendsComponent.prototype.addAll = function (newFriends) {
         for (var i = 0; i < newFriends.length; i++) {
@@ -60,10 +55,9 @@ var FriendsComponent = (function () {
         core_1.Component({
             selector: "friends",
             templateUrl: "app/component/friends.component.html",
-            styleUrls: ["assets/css/player.css"],
-            providers: [user_service_1.UserService]
+            styleUrls: ["assets/css/player.css"]
         }), 
-        __metadata('design:paramtypes', [user_service_1.UserService])
+        __metadata('design:paramtypes', [user_service_1.UserService, track_service_1.TrackService, player_service_1.PlayerService])
     ], FriendsComponent);
     return FriendsComponent;
 }());

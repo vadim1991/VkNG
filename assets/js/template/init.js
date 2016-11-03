@@ -78,7 +78,7 @@ $(document).ready(function() {
 
 
 
-// --------- 1. HOMEPAGE ----------  // 
+// --------- 1. HOMEPAGE ----------  //
 
 if ($(window).width() >= 768) {
 	$('#HUW').height($(document).height() - 20);
@@ -91,37 +91,37 @@ $(window).resize(function(){
 
 
 
-// --------- 2. LOGO & NAV ----------  // 
+// --------- 2. LOGO & NAV ----------  //
 
 $('#logo').clone().appendTo('#nav-header');
 $("#primary-nav li a").each(function() {
-	$(this).clone().appendTo('#mobileNav ul').wrap('<li></li>');	
+	$(this).clone().appendTo('#mobileNav ul').wrap('<li></li>');
 });
 $("#mobileNav li").each(function() {
 	var child = $(this).find('a');
 	if(child.children().length === 0) {
 		child.prepend('&nbsp;- ').addClass('child');
-	}	
+	}
 });
 $('#sec-nav ul').html($('#primary-nav ul li.active ul').html());
 
 
 
-// --------- 3. FLEXSLIDER ----------  // 
+// --------- 3. FLEXSLIDER ----------  //
 
 if ($.isFunction($.fn.froogaloop)) {
 var player = document.getElementById('player_1');
 $f(player).addEvent('ready', ready);
 function addEvent(element, eventName, callback) {
 	(element.addEventListener) ? element.addEventListener(eventName, callback, false) : element.attachEvent(eventName, callback, false);
-}  
+}
 function ready(player_id) {
 	var froogaloop = $f(player_id);
-      
+
 	froogaloop.addEvent('play', function(data) {
 		$('.flexslider').flexslider("pause");
 	});
-        
+
 	froogaloop.addEvent('pause', function(data) {
 		$('.flexslider').flexslider("play");
 	});
@@ -151,7 +151,7 @@ $('.sortable-list li').each(function () {
 	/* For Event List */
 	if ($(this).is("#event-list *")) {
 		var char = $(this).find('p.sort-by').text();
-	} 
+	}
 	/* For Album/Artist List */
 	if ($(this).is("#album-list *, #artist-list *")) {
 		var char = $.trim($(this).find('p').text().toLowerCase())[0];
@@ -175,7 +175,7 @@ if($('#album-list, #artist-list').length > 0) {
 }
 /* Generate List Structure */
 $.each(list, function (_, item) {
-	$('<li><a href="#sort-'+ item.char.replace(/\s/g, '') +'">'+ item.char +'</a></li>').appendTo('#content-sorter ul');    
+	$('<li><a href="#sort-'+ item.char.replace(/\s/g, '') +'">'+ item.char +'</a></li>').appendTo('#content-sorter ul');
 	var $li = $('<li id="sort-'+ item.char.replace(/\s/g, '') +'" data-sortable="'+ item.char.replace(/\s/g, '&nbsp;') +'"/>').appendTo('.sortable-list');
 	var $ul = $('<ul class="clearfix"/>').append(item.array).appendTo($li);
 });
@@ -184,7 +184,6 @@ $.each(list, function (_, item) {
 
 // --------- 5. TIPSY ----------  //
 
-$('.tips').tipsy({gravity: 's'});
 
 
 
@@ -207,7 +206,7 @@ $(window).scroll(function() {
 		$('#fixy, #page').addClass('fixed');
 	} else {
 		$('#fixy, #page').removeClass('fixed');
-	}	
+	}
 });
 
 
@@ -222,7 +221,7 @@ $('#toggle-map').click(function () {
 		$(this).find('span').text('Hide Map');
 	} else {
 		$(this).find('span').text('Show Map');
-	}	
+	}
 	return false;
 });
 
@@ -238,22 +237,14 @@ if ($.isFunction($.fn.prettyPhoto)) {
 
 // --------- 10. RESPONSIVE VIDEO [ FITVIDS ] ----------  //
 
-$(".qcBlogEntry").fitVids();
+
 
 
 
 // --------- 11. JSOCIAL ----------  //
 
 // Flickr
-$('#flickr').jflickrfeed({
-	limit: 10,
-	qstrings: {
-	id: '52617155@N08' // Define Flickr ID //
-	},
-	itemTemplate: '<li><a href="{{image_b}}" rel="prettyPhoto[pp_gal]"><img class="flickr" src="{{image_s}}" alt="{{title}}"></a></li>'
-	}, function(data) {
-	$('#flickr a').prettyPhoto({theme:'dark_square', social_tools: ''});
-});
+
 
 
 
@@ -263,53 +254,53 @@ $('#flickr').jflickrfeed({
 
 $('.tabs a').click(function(){
 	switch_tabs($(this));
-}); 
-switch_tabs($('.defaulttab')); 
+});
+switch_tabs($('.defaulttab'));
 function switch_tabs(obj) {
 	$('.tab-content').hide();
 	$('.tabs a').removeClass("selected");
-	var id = obj.attr("rel"); 
+	var id = obj.attr("rel");
 	$('#'+id).fadeIn(500);
 	obj.addClass("selected");
 }
-	
+
 /*-- Toggle --*/
-	
-if ( jQuery( '.shortcode-toggle').length ) {	
-		
+
+if ( jQuery( '.shortcode-toggle').length ) {
+
 	jQuery( '.shortcode-toggle').each( function () {
-			
+
 		var toggleObj = jQuery(this);
-			
+
 		toggleObj.closedText = toggleObj.find( 'input[name="title_closed"]').attr( 'value' );
 		toggleObj.openText = toggleObj.find( 'input[name="title_open"]').attr( 'value' );
-			
+
 		toggleObj.find( 'input[name="title_closed"]').remove();
 		toggleObj.find( 'input[name="title_open"]').remove();
-			
+
 		toggleObj.find( 'h5.toggle-trigger a').click( function () {
-			
+
 			toggleObj.find( '.toggle-content').animate({ opacity: 'toggle', height: 'toggle' }, 300);
 			toggleObj.toggleClass( 'open' ).toggleClass( 'closed' );
-				
+
 			if ( toggleObj.hasClass( 'open') ) {
-				
+
 				jQuery(this).text(toggleObj.openText);
-				
+
 			} // End IF Statement
-				
+
 			if ( toggleObj.hasClass( 'closed') ) {
-				
+
 				jQuery(this).text(toggleObj.closedText);
-				
+
 			} // End IF Statement
-				
+
 			return false;
-			
+
 		});
-					
+
 	});
-	
+
 } // End IF Statement
 
 
@@ -343,7 +334,7 @@ $('.qcForm').submit(function() {
 		var formInput = $(this).serialize();
 		var hideForm = $(this);
 		$.post($(this).attr('action'),formInput, function(data){
-			$(hideForm).slideUp( "fast", function() {				   
+			$(hideForm).slideUp( "fast", function() {
 				$(this).before( '<br/><p class="info">Thanks! Your email was successfully sent.</p>' );
 			});
 		});
@@ -352,5 +343,5 @@ $('.qcForm').submit(function() {
 });
 
 // --------------------  //
-  
+
 });

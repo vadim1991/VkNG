@@ -13,7 +13,8 @@ var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
 var track_1 = require("../model/track");
 var auth_service_1 = require('./auth.service');
-var URL = "https://api.vk.com/method/audio.get?callback=JSONP_CALLBACK";
+var GET_AUDIO_URL = "https://api.vk.com/method/audio.get?callback=JSONP_CALLBACK";
+var SEARCH_AUDIO_URL = "https://api.vk.com/method/audio.search?callback=JSONP_CALLBACK";
 var TrackService = (function () {
     function TrackService(jsonp, authService) {
         this.jsonp = jsonp;
@@ -25,6 +26,24 @@ var TrackService = (function () {
     TrackService.prototype.getOwnTracks = function (count, offset) {
         return this.getTracks(count, offset, this.authService.getUserId());
     };
+    TrackService.prototype.searchTracks = function (count, offset, searchText) {
+        var _this = this;
+        var params = new http_1.URLSearchParams();
+        params.set('access_token', this.authService.getAccessToken());
+        params.set('q', searchText);
+        params.set('count', count.toString());
+        params.set('offset', offset.toString());
+        params.set('auto_complete', "1");
+        params.set('performer_only', "1");
+        params.set('sort', "1");
+        params.set('search_own', "1");
+        return this.jsonp.get(SEARCH_AUDIO_URL, { search: params })
+            .map(function (res) { return res.json().response; })
+            .map(function (tracks) {
+            return _this.parseTracks(tracks);
+        })
+            .toPromise();
+    };
     TrackService.prototype.getTracks = function (count, offset, userId) {
         var _this = this;
         var params = new http_1.URLSearchParams();
@@ -32,7 +51,7 @@ var TrackService = (function () {
         params.set('owner_id', userId);
         params.set('count', count.toString());
         params.set('offset', offset.toString());
-        return this.jsonp.get(URL, { search: params })
+        return this.jsonp.get(GET_AUDIO_URL, { search: params })
             .map(function (res) { return res.json().response; })
             .map(function (tracks) {
             return _this.parseTracks(tracks);
@@ -41,14 +60,12 @@ var TrackService = (function () {
     };
     TrackService.prototype.parseTracks = function (items) {
         var tracks = [];
-        for (var i = 1; i < items.length; i++) {
-            tracks.push(new track_1.Track(items[i]));
+        if (items) {
+            for (var i = 1; i < items.length; i++) {
+                tracks.push(new track_1.Track(items[i]));
+            }
         }
         return tracks;
-    };
-    TrackService.prototype.handleResponse = function (result) {
-        console.log(result);
-        return result;
     };
     TrackService = __decorate([
         core_1.Injectable(), 

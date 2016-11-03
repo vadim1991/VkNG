@@ -7,7 +7,7 @@
         [infiniteScrollThrottle]="20"
         [scrollWindow]="false"
         (scrolled)="onScrollDown()">
-        <li *ngFor="let friend of friends"><a class="friend" href="#friend&amp;id={{friend.uid}}" data-id={{friend.uid}}><img
+        <li *ngFor="let friend of friends" (click)="onSelect(friend)"><a [class.green]="friend === selectedFriend" class="friend"><img
                 class="friend-img"
                 src={{friend.photoUrl}}><span
                 class="track-title">{{friend.firstName}}&nbsp;{{friend.lastName}}</span></a></li>
