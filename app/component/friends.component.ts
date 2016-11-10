@@ -1,7 +1,6 @@
 import {Component, OnInit} from "@angular/core"
 import {UserService} from "../service/user.service";
 import {User} from "../model/user";
-import {TrackService} from "../service/track.service";
 import {PlayerService} from "../service/player.service";
 
 
@@ -18,12 +17,12 @@ export class FriendsComponent implements OnInit {
     isOver:boolean = false;
     selectedFriend: User;
 
-    constructor(private userService:UserService, private trackService: TrackService, private playerService: PlayerService) {
+    constructor(private userService:UserService, private playerService: PlayerService) {
 
     }
 
     ngOnInit():void {
-        this.userService.getFriends(this.count, this.offset).then(users => this.friends = users);
+        this.userService.getFriends(this.count, this.offset).then(users => this.addAll(users));
         this.offset += this.count;
     }
 
@@ -42,7 +41,7 @@ export class FriendsComponent implements OnInit {
 
     public onSelect(friend: User): void {
         this.selectedFriend = friend;
-        this.trackService.getFriendTracks(30, 0, friend.userId).then(tracks => this.playerService.fillPlayer(tracks));
+        this.playerService.loadFriendTracks(this.selectedFriend.userId);
     }
 
     private addAll(newFriends:Array<User>):void {

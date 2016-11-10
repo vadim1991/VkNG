@@ -9,11 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var track_service_1 = require("../service/track.service");
 var player_service_1 = require("../service/player.service");
 var MyTracksComponent = (function () {
-    function MyTracksComponent(trackService, playerService) {
-        this.trackService = trackService;
+    function MyTracksComponent(playerService) {
         this.playerService = playerService;
         this.tracks = [];
         this.count = 30;
@@ -22,18 +20,17 @@ var MyTracksComponent = (function () {
         console.log("constr track service");
     }
     MyTracksComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.trackService.getOwnTracks(30, 0).then(function (tracks) {
-            console.log(tracks);
-            _this.playerService.fillPlayer(tracks);
-        });
+        this.playerService.loadMyTracks();
+    };
+    MyTracksComponent.prototype.onScrollDown = function () {
+        console.log("on scroll playlist");
     };
     MyTracksComponent = __decorate([
         core_1.Component({
             selector: "my-tracks",
             templateUrl: "app/component/my-tracks.component.html"
         }), 
-        __metadata('design:paramtypes', [track_service_1.TrackService, player_service_1.PlayerService])
+        __metadata('design:paramtypes', [player_service_1.PlayerService])
     ], MyTracksComponent);
     return MyTracksComponent;
 }());

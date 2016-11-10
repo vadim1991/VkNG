@@ -13,8 +13,8 @@ var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
 var track_1 = require("../model/track");
 var auth_service_1 = require('./auth.service');
-var GET_AUDIO_URL = "https://api.vk.com/method/audio.get?callback=JSONP_CALLBACK";
-var SEARCH_AUDIO_URL = "https://api.vk.com/method/audio.search?callback=JSONP_CALLBACK";
+var GET_AUDIO_URL = "https://api.vk.com/dev/audio.get?callback=JSONP_CALLBACK&v=5.60";
+var SEARCH_AUDIO_URL = "https://api.vk.com/dev/audio.search?callback=JSONP_CALLBACK&v=5.60";
 var TrackService = (function () {
     function TrackService(jsonp, authService) {
         this.jsonp = jsonp;
@@ -40,7 +40,7 @@ var TrackService = (function () {
         return this.jsonp.get(SEARCH_AUDIO_URL, { search: params })
             .map(function (res) { return res.json().response; })
             .map(function (tracks) {
-            return _this.parseTracks(tracks);
+            return _this.parseTracks(tracks.items);
         })
             .toPromise();
     };
@@ -49,19 +49,21 @@ var TrackService = (function () {
         var params = new http_1.URLSearchParams();
         params.set('access_token', this.authService.getAccessToken());
         params.set('owner_id', userId);
+        params.set('need_user', "0");
         params.set('count', count.toString());
         params.set('offset', offset.toString());
         return this.jsonp.get(GET_AUDIO_URL, { search: params })
             .map(function (res) { return res.json().response; })
             .map(function (tracks) {
-            return _this.parseTracks(tracks);
+            console.log(tracks);
+            return _this.parseTracks(tracks.items);
         })
             .toPromise();
     };
     TrackService.prototype.parseTracks = function (items) {
         var tracks = [];
         if (items) {
-            for (var i = 1; i < items.length; i++) {
+            for (var i = 0; i < items.length; i++) {
                 tracks.push(new track_1.Track(items[i]));
             }
         }

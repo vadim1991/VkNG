@@ -9,10 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var player_service_1 = require("./service/player.service");
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(playerService) {
+        this.playerService = playerService;
     }
     AppComponent.prototype.ngOnInit = function () {
+    };
+    AppComponent.prototype.onScrollDown = function () {
+        console.log("on scroll playlist");
+        this.playerService.loadMore();
     };
     AppComponent = __decorate([
         core_1.Component({
@@ -20,7 +26,7 @@ var AppComponent = (function () {
             templateUrl: "app/app.component.html",
             styleUrls: ["assets/css/player.css"]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [player_service_1.PlayerService])
     ], AppComponent);
     return AppComponent;
 }());

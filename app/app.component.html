@@ -114,7 +114,7 @@
                             <!-- ## PLAY LIST ## -->
                             <div class="playlist-heading">Track List
                                 <!-- ## SHUFFLE/REPEAT ## -->
-                                <ul class="jp-toggles clearfix">
+                                <ul class="jp-toggles clearfix" >
                                     <li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle"><i
                                             class="icon-shuffle-1"></i> Shuffle</a></li>
                                     <li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off"
@@ -127,7 +127,11 @@
                             </div>
                             <!-- ## TRACK LIST ## -->
                             <div class="jp-playlist" id="overflow-scroll">
-                                <ul class="scrollbar" id="style-15"></ul>
+                                <ul class="scrollbar" id="style-15" infinite-scroll
+                                    [infiniteScrollDistance]="1"
+                                    [infiniteScrollThrottle]="20"
+                                    [scrollWindow]="false"
+                                    (scrolled)="onScrollDown()"></ul>
                             </div>
                             <!-- ## PLAYER FALLBACK ## -->
                             <div class="jp-no-solution" style="display: none;">

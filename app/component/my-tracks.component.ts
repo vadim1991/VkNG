@@ -1,5 +1,4 @@
 import {Component, OnInit} from "@angular/core"
-import {TrackService} from "../service/track.service";
 import {PlayerService} from "../service/player.service";
 import {Track} from "../model/track";
 
@@ -15,27 +14,15 @@ export class MyTracksComponent implements OnInit {
     offset:number = 0;
     isOver:boolean = false;
 
-    constructor(private trackService: TrackService, private playerService: PlayerService) {
+    constructor(private playerService: PlayerService) {
         console.log("constr track service")
     }
 
     ngOnInit(): void {
-        this.trackService.getOwnTracks(30, 0).then(tracks => {
-            console.log(tracks);
-            this.playerService.fillPlayer(tracks);
-        });
+        this.playerService.loadMyTracks()
     }
 
-    // public onScrollDown():void {
-    //     if (!this.isOver) {
-    //         this.userService.getFriends(this.count, this.offset).then(users => {
-    //             this.addAll(users);
-    //             if (users.length > 0 && users.length >= this.count) {
-    //                 this.offset += this.count;
-    //             } else {
-    //                 this.isOver = true;
-    //             }
-    //         });
-    //     }
-    // }
+    public onScrollDown():void {
+        console.log("on scroll playlist")
+    }
 }

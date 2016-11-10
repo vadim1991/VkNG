@@ -10,12 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var user_service_1 = require("../service/user.service");
-var track_service_1 = require("../service/track.service");
 var player_service_1 = require("../service/player.service");
 var FriendsComponent = (function () {
-    function FriendsComponent(userService, trackService, playerService) {
+    function FriendsComponent(userService, playerService) {
         this.userService = userService;
-        this.trackService = trackService;
         this.playerService = playerService;
         this.friends = [];
         this.count = 30;
@@ -24,7 +22,7 @@ var FriendsComponent = (function () {
     }
     FriendsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.userService.getFriends(this.count, this.offset).then(function (users) { return _this.friends = users; });
+        this.userService.getFriends(this.count, this.offset).then(function (users) { return _this.addAll(users); });
         this.offset += this.count;
     };
     FriendsComponent.prototype.onScrollDown = function () {
@@ -42,9 +40,8 @@ var FriendsComponent = (function () {
         }
     };
     FriendsComponent.prototype.onSelect = function (friend) {
-        var _this = this;
         this.selectedFriend = friend;
-        this.trackService.getFriendTracks(30, 0, friend.userId).then(function (tracks) { return _this.playerService.fillPlayer(tracks); });
+        this.playerService.loadFriendTracks(this.selectedFriend.userId);
     };
     FriendsComponent.prototype.addAll = function (newFriends) {
         for (var i = 0; i < newFriends.length; i++) {
@@ -57,7 +54,7 @@ var FriendsComponent = (function () {
             templateUrl: "app/component/friends.component.html",
             styleUrls: ["assets/css/player.css"]
         }), 
-        __metadata('design:paramtypes', [user_service_1.UserService, track_service_1.TrackService, player_service_1.PlayerService])
+        __metadata('design:paramtypes', [user_service_1.UserService, player_service_1.PlayerService])
     ], FriendsComponent);
     return FriendsComponent;
 }());

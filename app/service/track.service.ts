@@ -6,8 +6,8 @@ import 'rxjs/add/operator/toPromise';
 import {Track} from "../model/track"
 import {AuthService} from './auth.service'
 
-const GET_AUDIO_URL = "https://api.vk.com/method/audio.get?callback=JSONP_CALLBACK";
-const SEARCH_AUDIO_URL = "https://api.vk.com/method/audio.search?callback=JSONP_CALLBACK";
+const GET_AUDIO_URL = "https://api.vk.com/dev/audio.get?callback=JSONP_CALLBACK&v=5.60";
+const SEARCH_AUDIO_URL = "https://api.vk.com/dev/audio.search?callback=JSONP_CALLBACK&v=5.60";
 
 @Injectable()
 export class TrackService {
@@ -36,7 +36,7 @@ export class TrackService {
         return this.jsonp.get(SEARCH_AUDIO_URL, {search: params})
             .map(res => res.json().response)
             .map((tracks) => {
-                return this.parseTracks(tracks);
+                return this.parseTracks(tracks.items);
             })
             .toPromise();
     }
@@ -45,12 +45,14 @@ export class TrackService {
         var params = new URLSearchParams();
         params.set('access_token', this.authService.getAccessToken());
         params.set('owner_id', userId);
+        params.set('need_user', "0");
         params.set('count', count.toString());
         params.set('offset', offset.toString());
         return this.jsonp.get(GET_AUDIO_URL, {search: params})
             .map(res => res.json().response)
             .map((tracks) => {
-                return this.parseTracks(tracks);
+                console.log(tracks);
+                return this.parseTracks(tracks.items);
             })
             .toPromise();
     }
@@ -58,7 +60,7 @@ export class TrackService {
     private parseTracks(items: any): Track[] {
         let tracks: Array<Track> = [];
         if (items) {
-            for (var i = 1; i < items.length; i++) {
+            for (var i = 0; i < items.length; i++) {
                 tracks.push(new Track(items[i]));
             }
         }
